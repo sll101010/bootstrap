@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% include header.html %}
+    {{ partial "header" . }}
   </head>
   <body>
-    {% include skippy.html %}
+    {{ partial "skippy" . }}
 
-    {% include docs-navbar.html %}
+    {{ partial "docs-navbar" . }}
 
-    {% if page.layout == "simple" %}
-      {{ content }}
-    {% else %}
+    {{ if eq .Page.Layout "simple" }}
+      {{ .Content }}
+    {{ else }}
       <main id="content" role="main">
-        {{ content }}
+        {{ .Content }}
       </main>
-    {% endif %}
+    {{ end }}
 
-    {% include footer.html %}
-    {% include scripts.html %}
+    {{ partial "footer" . }}
+    {{ partial "scripts" . }}
   </body>
 </html>

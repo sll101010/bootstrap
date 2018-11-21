@@ -1,27 +1,27 @@
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
   <a class="navbar-brand mr-0 mr-md-2" href="{{ .Site.BaseURL }}/" aria-label="Bootstrap">
-    {%- include icons/bootstrap.svg width="36" height="36" class="d-block" -%}
+    {{- partial "icons/bootstrap.svg" (dict "class" "d-block" "width" "36" "height" "36") -}}
   </a>
 
   <div class="navbar-nav-scroll">
     <ul class="navbar-nav bd-navbar-nav flex-row">
       <li class="nav-item">
-        <a class="nav-link {% if page.layout == "home" %}active{% endif %}" href="{{ .Site.BaseURL }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
+        <a class="nav-link{{ if .IsHome }} active{{ end }}" href="{{ .Site.BaseURL }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+        <a class="nav-link{{ if eq .Page.Layout "docs" }} active{{ end }}" href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if page.title == "Examples" %}active{% endif %}" href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
+        <a class="nav-link{{ if eq .Page.Title "Examples" }} active{{ end }}" href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/examples/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Examples');">Examples</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ site.themes }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Themes</a>
+        <a class="nav-link" href="{{ .Site.Params.themes }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Themes');" target="_blank" rel="noopener">Themes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ site.expo }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Expo');" target="_blank" rel="noopener">Expo</a>
+        <a class="nav-link" href="{{ .Site.Params.expo }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Expo');" target="_blank" rel="noopener">Expo</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ site.blog }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');" target="_blank" rel="noopener">Blog</a>
+        <a class="nav-link" href="{{ .Site.Params.blog }}/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');" target="_blank" rel="noopener">Blog</a>
       </li>
     </ul>
   </div>
@@ -45,17 +45,17 @@
 
     <li class="nav-item">
       <a class="nav-link p-2" href="{{ .Site.Params.repo }}" target="_blank" rel="noopener" aria-label="GitHub">
-        {%- include icons/github.svg class="navbar-nav-svg" -%}
+        {{- partial "icons/github.svg" (dict "class" "navbar-nav-svg" "width" "36" "height" "36") -}}
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link p-2" href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener" aria-label="Twitter">
-        {%- include icons/twitter.svg class="navbar-nav-svg" -%}
+      <a class="nav-link p-2" href="https://twitter.com/{{ .Site.Social.twitter }}" target="_blank" rel="noopener" aria-label="Twitter">
+        {{- partial "icons/twitter.svg" (dict "class" "navbar-nav-svg" "width" "36" "height" "36") -}}
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link p-2" href="{{ site.slack }}/" target="_blank" rel="noopener" aria-label="Slack">
-        {%- include icons/slack.svg class="navbar-nav-svg" -%}
+      <a class="nav-link p-2" href="{{ .Site.Params.slack }}/" target="_blank" rel="noopener" aria-label="Slack">
+        {{- partial "icons/slack.svg" (dict "class" "navbar-nav-svg" "width" "36" "height" "36") -}}
       </a>
     </li>
   </ul>

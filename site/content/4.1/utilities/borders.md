@@ -14,27 +14,25 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 ### Additive
 
 <div class="bd-example-border-utils">
-{% capture example %}
+{{< example html >}}
 <span class="border"></span>
 <span class="border-top"></span>
 <span class="border-right"></span>
 <span class="border-bottom"></span>
 <span class="border-left"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ### Subtractive
 
 <div class="bd-example-border-utils bd-example-border-utils-0">
-{% capture example %}
+{{< example html >}}
 <span class="border-0"></span>
 <span class="border-top-0"></span>
 <span class="border-right-0"></span>
 <span class="border-bottom-0"></span>
 <span class="border-left-0"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Border color
@@ -42,12 +40,11 @@ Use border utilities to add or remove an element's borders. Choose from all bord
 Change the border color using utilities built on our theme colors.
 
 <div class="bd-example-border-utils">
-{% capture example %}
+{{< example html >}}
 {% for color in site.data.theme-colors %}
 <span class="border border-{{ color.name }}"></span>{% endfor %}
 <span class="border border-white"></span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Border-radius
@@ -55,14 +52,14 @@ Change the border color using utilities built on our theme colors.
 Add classes to an element to easily round its corners.
 
 <div class="bd-example bd-example-images">
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded" title="Example rounded image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-top" title="Example top rounded image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-right" title="Example right rounded image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-bottom" title="Example bottom rounded image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-left" title="Example left rounded image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-circle" title="Completely round image" -%}
-  {%- include icons/placeholder.svg width="150" height="75" class="rounded-pill" title="Rounded pill image" -%}
-  {%- include icons/placeholder.svg width="75" height="75" class="rounded-0" title="Example non-rounded image (overrides rounding applied elsewhere)" -%}
+  {{< placeholder width="75" height="75" class="rounded" title="Example rounded image" >}}
+  {{< placeholder width="75" height="75" class="rounded-top" title="Example top rounded image" >}}
+  {{< placeholder width="75" height="75" class="rounded-right" title="Example right rounded image" >}}
+  {{< placeholder width="75" height="75" class="rounded-bottom" title="Example bottom rounded image" >}}
+  {{< placeholder width="75" height="75" class="rounded-left" title="Example left rounded image" >}}
+  {{< placeholder width="75" height="75" class="rounded-circle" title="Completely round image" >}}
+  {{< placeholder width="150" height="75" class="rounded-pill" title="Rounded pill image" >}}
+  {{< placeholder width="75" height="75" class="rounded-0" title="Example non-rounded image (overrides rounding applied elsewhere)" >}}
 </div>
 
 {{< highlight html >}}

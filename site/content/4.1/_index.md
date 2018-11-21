@@ -29,14 +29,14 @@ layout: home
         </p>
       </div>
     </div>
-    {% include ads.html %}
+    {{ partial "ads" . }}
   </div>
 </main>
 
 <div class="masthead-followup row m-0 border border-white">
   <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
     <!-- Icon by Bytesize https://github.com/danklammer/bytesize-icons -->
-    {% include icons/import.svg width="32" height="32" class="text-primary mb-2" %}
+    {{- partial "icons/import.svg" (dict "class" "text-primary mb-2" "width" "32" "height" "32") -}}
     <h3>Installation</h3>
     <p>Include Bootstrap’s source Sass and JavaScript files via npm, Composer or Meteor. Package managed installs don’t include documentation, but do include our build system and readme.</p>
 
@@ -45,7 +45,7 @@ npm install bootstrap
 {{< /highlight >}}
 
 {{< highlight sh >}}
-gem install bootstrap -v {{ site.current_ruby_version }}
+gem install bootstrap -v {{ .Site.Params.current_ruby_version }}
 {{< /highlight >}}
 
     <hr class="half-rule">
@@ -54,20 +54,20 @@ gem install bootstrap -v {{ site.current_ruby_version }}
 
   <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
     <!-- Icon by Bytesize https://github.com/danklammer/bytesize-icons -->
-    {% include icons/download.svg width="32" height="32" class="text-primary mb-2" %}
+    {{- partial "icons/download.svg" (dict "class" "text-primary mb-2" "width" "32" "height" "32") -}}
     <h3>BootstrapCDN</h3>
     <p>When you only need to include Bootstrap’s compiled CSS or JS, you can use <a href="https://www.bootstrapcdn.com/">BootstrapCDN</a>.</p>
 
 <h5>CSS only</h5>
 {{< highlight html >}}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ .Site.Params.cdn.css }}" integrity="{{ .Site.Params.cdn.css_hash }}" crossorigin="anonymous">
 {{< /highlight >}}
 
 <h5>JS, Popper.js, and jQuery</h5>
 {{< highlight html >}}
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.jquery }}" integrity="{{ .Site.Params.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.popper }}" integrity="{{ .Site.Params.cdn.popper_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.js }}" integrity="{{ .Site.Params.cdn.js_hash }}" crossorigin="anonymous"></script>
 {{< /highlight >}}
     <hr class="half-rule">
     <a class="btn btn-outline-primary" href="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/layout/overview/">Explore the docs</a>
@@ -75,13 +75,13 @@ gem install bootstrap -v {{ site.current_ruby_version }}
 
   <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
     <!-- Icon by Bytesize https://github.com/danklammer/bytesize-icons -->
-    {% include icons/lightning.svg width="32" height="32" class="text-primary mb-2" %}
+    {{- partial "icons/lightning.svg" (dict "class" "text-primary mb-2" "width" "32" "height" "32") -}}
     <h3>Official Themes</h3>
     <p>
       Take Bootstrap 4 to the next level with official premium themes—toolkits built on Bootstrap with new components and plugins, docs, and build tools.
     </p>
     <img class="img-fluid mt-3 mx-auto" src="{{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/assets/img/bootstrap-themes.png" alt="Bootstrap Themes" width="1024" height="388">
     <hr class="half-rule">
-    <a href="{{ site.themes }}/" class="btn btn-outline-primary">Browse themes</a>
+    <a href="{{ .Site.Params.themes }}/" class="btn btn-outline-primary">Browse themes</a>
   </div>
 </div>

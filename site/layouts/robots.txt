@@ -1,6 +1,8 @@
 # www.robotstxt.org/
 
+{{ if (eq (getenv "HUGO_ENV") "production") }}
 # Allow crawling of all content
+{{ end }}
 User-agent: *
-Disallow:{% if jekyll.environment != "production" %} /{% endif %}
+Disallow:{{ if (ne (getenv "HUGO_ENV") "production") }} /{{ end }}
 Sitemap: {{ .Site.BaseURL }}/sitemap.xml

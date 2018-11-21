@@ -20,7 +20,7 @@ Looking to quickly add Bootstrap to your project? Use BootstrapCDN, provided for
 Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
 
 {{< highlight html >}}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ .Site.Params.cdn.css }}" integrity="{{ .Site.Params.cdn.css_hash }}" crossorigin="anonymous">
 {{< /highlight >}}
 
 ### JS
@@ -30,9 +30,9 @@ Many of our components require the use of JavaScript to function. Specifically, 
 We use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/), but the full version is also supported.
 
 {{< highlight html >}}
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.jquery }}" integrity="{{ .Site.Params.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.popper }}" integrity="{{ .Site.Params.cdn.popper_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.js }}" integrity="{{ .Site.Params.cdn.js_hash }}" crossorigin="anonymous"></script>
 {{< /highlight >}}
 
 Curious which components explicitly require jQuery, our JS, and Popper.js? Click the show components link below. If you're at all unsure about the general page structure, keep reading for an example page template.
@@ -67,7 +67,7 @@ Be sure to have your pages set up with the latest design and development standar
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ .Site.Params.cdn.css }}" integrity="{{ .Site.Params.cdn.css_hash }}" crossorigin="anonymous">
 
     <title>Hello, world!</title>
   </head>
@@ -76,9 +76,9 @@ Be sure to have your pages set up with the latest design and development standar
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-    <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-    <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ .Site.Params.cdn.jquery }}" integrity="{{ .Site.Params.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ .Site.Params.cdn.popper }}" integrity="{{ .Site.Params.cdn.popper_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ .Site.Params.cdn.js }}" integrity="{{ .Site.Params.cdn.js_hash }}" crossorigin="anonymous"></script>
   </body>
 </html>
 {{< /highlight >}}
@@ -135,8 +135,8 @@ For improved cross-browser rendering, we use [Reboot]({{ .Site.BaseURL }}/docs/{
 Stay up to date on the development of Bootstrap and reach out to the community with these helpful resources.
 
 - Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The Official Bootstrap Blog]({{ site.blog }}/).
-- Join [the official Slack room]({{ site.slack }}/).
+- Read and subscribe to [The Official Bootstrap Blog]({{ .Site.Params.blog }}/).
+- Join [the official Slack room]({{ .Site.Params.slack }}/).
 - Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
 - Implementation help may be found at Stack Overflow (tagged [`bootstrap-4`](https://stackoverflow.com/questions/tagged/bootstrap-4)).
 - Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/search?q=keywords:bootstrap) or similar delivery mechanisms for maximum discoverability.

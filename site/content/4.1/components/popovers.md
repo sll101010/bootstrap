@@ -10,7 +10,7 @@ toc: true
 
 Things to know when using the popover plugin:
 
-- Popovers rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning. You must include [popper.min.js]({{ site.cdn.popper }}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper.js in order for popovers to work!
+- Popovers rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning. You must include [popper.min.js]({{ .Site.Params.cdn.popper }}) before bootstrap.js or use `bootstrap.bundle.min.js` / `bootstrap.bundle.js` which contains Popper.js in order for popovers to work!
 - Popovers require the [tooltip plugin]({{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/components/tooltips/) as a dependency.
 - If you're building our JavaScript from source, it [requires `util.js`]({{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/javascript/#util).
 - Popovers are opt-in for performance reasons, so **you must initialize them yourself**.
@@ -21,7 +21,9 @@ Things to know when using the popover plugin:
 - When triggered from anchors that wrap across multiple lines, popovers will be centered between the anchors' overall width. Use `.text-nowrap` on your `<a>`s to avoid this behavior.
 - Popovers must be hidden before their corresponding elements have been removed from the DOM.
 
-{% include callout-info-prefersreducedmotion.md %}
+{{< callout info >}}
+{{< partial "callout-info-prefersreducedmotion.md" >}}
+{{< /callout >}}
 
 Keep reading to see how popovers work with some examples.
 
@@ -49,10 +51,9 @@ $(function () {
 
 ## Example
 
-{% capture example %}
+{{< example html >}}
 <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ### Four directions
 
@@ -98,17 +99,15 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 Use the `focus` trigger to dismiss popovers on the user's next click of a different element than the toggle element.
 
-{% capture callout %}
+{{< callout danger >}}
 #### Specific markup required for dismiss-on-next-click
 
 For proper cross-browser and cross-platform behavior, you must use the `<a>` tag, _not_ the `<button>` tag, and you also must include a [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute.
-{% endcapture %}
-{% include callout.html content=callout type="danger" %}
+{{< /callout >}}
 
-{% capture example %}
+{{< example html >}}
 <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 {{< highlight js >}}
 $('.popover-dismiss').popover({
@@ -122,12 +121,11 @@ Elements with the `disabled` attribute aren't interactive, meaning users cannot 
 
 For disabled popover triggers, you may also prefer `data-trigger="hover"` so that the popover appears as immediate visual feedback to your users as they may not expect to _click_ on a disabled element.
 
-{% capture example %}
+{{< example html >}}
 <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
   <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Disabled button</button>
 </span>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 
 ## Usage
 
@@ -252,16 +250,17 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </tbody>
 </table>
 
-{% capture callout %}
+{{< callout info >}}
 #### Data attributes for individual popovers
 
 Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.
-{% endcapture %}
-{% include callout.html content=callout type="info" %}
+{{< /callout >}}
 
 ### Methods
 
-{% include callout-danger-async-methods.md %}
+{{< callout danger >}}
+{{< partial "callout-danger-async-methods.md" >}}
+{{< /callout >}}
 
 #### `$().popover(options)`
 

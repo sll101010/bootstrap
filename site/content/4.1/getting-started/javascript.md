@@ -34,13 +34,12 @@ Alternatively, to target a specific plugin, just include the plugin's name as a 
 $(document).off('.alert.data-api')
 {{< /highlight >}}
 
-{% capture callout %}
+{{< callout warning >}}
 ## Selectors
 
 Currently to query DOM elements we use the native methods `querySelector` and `querySelectorAll` for performance reasons, so you have to use [valid selectors](https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier).
 If you use special selectors, for example: `collapse:Example` be sure to escape them.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
 ## Events
 
@@ -124,12 +123,11 @@ $.fn.tooltip.Constructor.VERSION // => "{{ .Site.Params.current_version }}"
 
 Bootstrap's plugins don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
 
-{% capture callout %}
+{{< callout warning >}}
 ##### Third-party libraries
 
 **Bootstrap does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
 ## Util
 

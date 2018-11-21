@@ -106,7 +106,9 @@ We occasionally use media queries that go in the other direction (the given scre
 // No media query since the extra-large breakpoint has no upper bound on its width
 {{< /highlight >}}
 
-{% include callout-info-mediaqueries-breakpoints.md %}
+{{< callout info >}}
+{{< partial "callout-info-mediaqueries-breakpoints.md" >}}
+{{< /callout >}}
 
 Once again, these media queries are also available via Sass mixins:
 

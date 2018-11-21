@@ -8,14 +8,14 @@ toc: true
 
 ## Compiled CSS and JS
 
-Download ready-to-use compiled code for **Bootstrap v{{ site.current_version}}** to easily drop into your project, which includes:
+Download ready-to-use compiled code for **Bootstrap v{{ .Site.Params.current_version}}** to easily drop into your project, which includes:
 
 - Compiled and minified CSS bundles (see [CSS files comparison]({{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/contents/#css-files))
 - Compiled and minified JavaScript plugins
 
 This doesn't include documentation, source files, or any optional JavaScript dependencies (jQuery and Popper.js).
 
-<a href="{{ site.download.dist }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download Bootstrap');">Download</a>
+<a href="{{ .Site.Params.download.dist }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download Bootstrap');">Download</a>
 
 ## Source files
 
@@ -26,22 +26,22 @@ Compile Bootstrap with your own asset pipeline by downloading our source Sass, J
 
 Should you require [build tools]({{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/getting-started/build-tools/#tooling-setup), they are included for developing Bootstrap and its docs, but they're likely unsuitable for your own purposes.
 
-<a href="{{ site.download.source }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
+<a href="{{ .Site.Params.download.source }}" class="btn btn-bd-primary" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
 
 ## BootstrapCDN
 
 Skip the download with [BootstrapCDN](https://www.bootstrapcdn.com/) to deliver cached version of Bootstrap's compiled CSS and JS to your project.
 
 {{< highlight html >}}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ .Site.Params.cdn.css }}" integrity="{{ .Site.Params.cdn.css_hash }}" crossorigin="anonymous">
+<script src="{{ .Site.Params.cdn.js }}" integrity="{{ .Site.Params.cdn.js_hash }}" crossorigin="anonymous"></script>
 {{< /highlight >}}
 
 If you're using our compiled JavaScript, don't forget to include CDN versions of jQuery and Popper.js before it.
 
 {{< highlight html >}}
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.jquery }}" integrity="{{ .Site.Params.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+<script src="{{ .Site.Params.cdn.popper }}" integrity="{{ .Site.Params.cdn.popper_hash }}" crossorigin="anonymous"></script>
 {{< /highlight >}}
 
 ## Package managers
@@ -76,13 +76,13 @@ yarn add bootstrap
 Install Bootstrap in your Ruby apps using [Bundler](https://bundler.io/) (**recommended**) and [RubyGems](https://rubygems.org/) by adding the following line to your [`Gemfile`](https://bundler.io/gemfile.html):
 
 {{< highlight ruby >}}
-gem 'bootstrap', '~> {{ site.current_ruby_version }}'
+gem 'bootstrap', '~> {{ .Site.Params.current_ruby_version }}'
 {{< /highlight >}}
 
 Alternatively, if you're not using Bundler, you can install the gem by running this command:
 
 {{< highlight sh >}}
-gem install bootstrap -v {{ site.current_ruby_version }}
+gem install bootstrap -v {{ .Site.Params.current_ruby_version }}
 {{< /highlight >}}
 
 [See the gem's README](https://github.com/twbs/bootstrap-rubygem/blob/master/README.md) for further details.

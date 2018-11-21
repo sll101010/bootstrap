@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% include header.html %}
+    {{ partial "header" . }}
   </head>
   <body>
-    {% include skippy.html %}
+    {{ partial "skippy" . }}
 
-    {% include docs-navbar.html %}
+    {{ partial "docs-navbar" . }}
 
-    {{ content }}
+    {{ .Content }}
 
-    {% include footer.html %}
-    {% include scripts.html %}
+    {{ partial "footer" . }}
+    {{ partial "scripts" . }}
   </body>
 </html>

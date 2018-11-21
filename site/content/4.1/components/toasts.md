@@ -25,10 +25,10 @@ To encourage extensible and predictable toasts, we recommend a header and body. 
 Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your "toasted" content and strongly encourage a dismiss button.
 
 <div class="bg-light">
-{% capture example %}
+{{< example html >}}
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
     <strong class="mr-auto">Bootstrap</strong>
     <small>11 mins ago</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -39,8 +39,7 @@ Toasts are as flexible as you need and have very little required markup. At a mi
     Hello, world! This is a toast message.
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ### Translucent
@@ -48,10 +47,10 @@ Toasts are as flexible as you need and have very little required markup. At a mi
 Toasts are slightly translucent, too, so they blend over whatever they might appear over. For browsers that support the `backdrop-filter` CSS property, we'll also attempt to blur the elements under a toast.
 
 <div class="bg-dark">
-{% capture example %}
+{{< example html >}}
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
     <strong class="mr-auto">Bootstrap</strong>
     <small class="text-muted">11 mins ago</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -62,8 +61,7 @@ Toasts are slightly translucent, too, so they blend over whatever they might app
     Hello, world! This is a toast message.
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ### Stacking
@@ -71,10 +69,10 @@ Toasts are slightly translucent, too, so they blend over whatever they might app
 When you have multiple toasts, we default to vertiaclly stacking them in a readable manner.
 
 <div class="bg-light">
-{% capture example %}
+{{< example html >}}
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
     <strong class="mr-auto">Bootstrap</strong>
     <small class="text-muted">just now</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -88,7 +86,7 @@ When you have multiple toasts, we default to vertiaclly stacking them in a reada
 
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
     <strong class="mr-auto">Bootstrap</strong>
     <small class="text-muted">2 seconds ago</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -99,8 +97,7 @@ When you have multiple toasts, we default to vertiaclly stacking them in a reada
     Heads up, toasts will stack automatically
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Placement
@@ -108,11 +105,11 @@ When you have multiple toasts, we default to vertiaclly stacking them in a reada
 Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the top middle. If you're only ever going to show one toast at a time, put the positioning styles right on the `.toast`.
 
 <div class="bg-dark">
-{% capture example %}
+{{< example html >}}
 <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
   <div class="toast" style="position: absolute; top: 0; right: 0;">
     <div class="toast-header">
-      {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+      {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
       <strong class="mr-auto">Bootstrap</strong>
       <small>11 mins ago</small>
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -124,14 +121,13 @@ Place toasts with custom CSS as you need them. The top right is often used for n
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 For systems that generate more notifications, consider using a wrapping element so they can easily stack.
 
 <div class="bg-dark">
-{% capture example %}
+{{< example html >}}
 <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
   <!-- Position it -->
   <div style="position: absolute; top: 0; right: 0;">
@@ -139,7 +135,7 @@ For systems that generate more notifications, consider using a wrapping element 
     <!-- Then put toasts within -->
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+        {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
         <strong class="mr-auto">Bootstrap</strong>
         <small class="text-muted">just now</small>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -153,7 +149,7 @@ For systems that generate more notifications, consider using a wrapping element 
 
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+        {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
         <strong class="mr-auto">Bootstrap</strong>
         <small class="text-muted">2 seconds ago</small>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -166,21 +162,20 @@ For systems that generate more notifications, consider using a wrapping element 
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 You can also get fancy with flexbox utilities to align toasts horizontally and/or vertically.
 
 <div class="bg-dark">
-{% capture example html %}
+{{< example html >}}
 <!-- Flexbox container for aligning the toasts -->
 <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
 
   <!-- Then put toasts within -->
   <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+      {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
       <strong class="mr-auto">Bootstrap</strong>
       <small>11 mins ago</small>
       <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -192,8 +187,7 @@ You can also get fancy with flexbox utilities to align toasts horizontally and/o
     </div>
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## Accessibility
@@ -215,10 +209,10 @@ As the content you're displaying changes, be sure to update the [`delay` timeout
 When using `autohide: false`, you must add a close button to allow users to dismiss the toast.
 
 <div class="bg-light">
-{% capture example %}
+{{< example html >}}
 <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
   <div class="toast-header">
-    {% include icons/placeholder.svg width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " %}
+    {{< placeholder width="20" height="20" background="#007aff" class="rounded mr-2" text=" " title=" " >}}
     <strong class="mr-auto">Bootstrap</strong>
     <small>11 mins ago</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -229,8 +223,7 @@ When using `autohide: false`, you must add a close button to allow users to dism
     Hello, world! This is a toast message.
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
+{{< /example >}}
 </div>
 
 ## JavaScript behavior
@@ -282,7 +275,9 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 ### Methods
 
-{% include callout-danger-async-methods.md %}
+{{< callout danger >}}
+{{< partial "callout-danger-async-methods.md" >}}
+{{< /callout >}}
 
 #### `$().toast(options)`
 

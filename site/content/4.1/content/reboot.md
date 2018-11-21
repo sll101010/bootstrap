@@ -353,11 +353,10 @@ HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.o
 <input type="text" hidden>
 {{< /highlight >}}
 
-{% capture callout %}
+{{< callout warning >}}
 ##### jQuery incompatibility
 
 `[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
-{% endcapture %}
-{% include callout.html content=callout type="warning" %}
+{{< /callout >}}
 
 To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ .Site.BaseURL }}/docs/{{ .Site.Params.docs_version }}/utilities/visibility/) instead.

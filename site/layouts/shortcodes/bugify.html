@@ -8,7 +8,7 @@
 
 {%- for word in words -%}
   {% if word contains "#" %}
-    {% if word contains "," %}{% assign separator = true %}{% else %}{% assign separator = false %}{% endif %}
+    {% if word contains "," %}{% assign separator = true %}{{ else }}{% assign separator = false %}{{ end }}
     {%- assign data = word | split: "#" -%}
     {%- assign bug_cat = data[0] | strip_newlines -%}
     {%- assign bug_id  = data[1] | strip_newlines | remove: "," -%}
@@ -34,9 +34,9 @@
       <a href="https://github.com/necolas/normalize.css/issues/{{ bug_id }}">Normalize #{{ bug_id }}</a>
     {%- else -%}
       <strong>parse error</strong>
-    {%- endcase -%}{% if separator %}, {% endif %}
+    {%- endcase -%}{% if separator %}, {{ end }}
 
-  {% else %}
+  {{ else }}
     {{ word }}
   {%- endif -%}
 {%- endfor -%}

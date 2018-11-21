@@ -256,19 +256,17 @@ After adding `position: relative;` in your CSS, call the scrollspy via JavaScrip
 $('body').scrollspy({ target: '#navbar-example' })
 {{< /highlight >}}
 
-{% capture callout %}
+{{< callout danger >}}
 #### Resolvable ID targets required
 
 Navbar links must have resolvable id targets. For example, a `<a href="#home">home</a>` must correspond to something in the DOM like `<div id="home"></div>`.
-{% endcapture %}
-{% include callout.html content=callout type="danger" %}
+{{< /callout >}}
 
-{% capture callout %}
+{{< callout info >}}
 #### Non-`:visible` target elements ignored
 
 Target elements that are not [`:visible` according to jQuery](https://api.jquery.com/visible-selector/) will be ignored and their corresponding nav items will never be highlighted.
-{% endcapture %}
-{% include callout.html content=callout type="info" %}
+{{< /callout >}}
 
 ### Methods
 

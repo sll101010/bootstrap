@@ -1,34 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% include header.html %}
+    {{ partial "header" . }}
   </head>
   <body>
-    {% include skippy.html %}
+    {{ partial "skippy" . }}
 
-    {% include docs-navbar.html %}
+    {{ partial "docs-navbar" . }}
 
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
         <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-          {% include docs-sidebar.html %}
+          {{ partial "docs-sidebar" . }}
         </div>
 
-        {% if page.toc %}
+        {{ if .Page.Toc }}
           <div class="d-none d-xl-block col-xl-2 bd-toc">
-            {{ content | toc_only }}
+            {{ .Content }}
           </div>
-        {% endif %}
+        {{ end }}
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-          <h1 class="bd-title" id="content">{{ page.title | smartify }}</h1>
-          <p class="bd-lead">{{ page.description | smartify }}</p>
-          {% include ads.html %}
-          {% include vendor/anchor_headings.html html=content h_min=2 h_max=5 anchorBody="#" anchorTitle="Permalink" anchorClass="bd-anchor" %}
+          <h1 class="bd-title" id="content">{{ .Title | markdownify }}</h1>
+          <p class="bd-lead">{{ .Description | markdownify }}</p>
+          {{ partial "ads" . }}
         </main>
       </div>
     </div>
 
-    {% include scripts.html %}
+    {{ partial "scripts" . }}
   </body>
 </html>
