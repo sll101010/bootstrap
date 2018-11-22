@@ -1450,6 +1450,10 @@
 .algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
   margin-top: 0 !important;
 }
+.algolia-autocomplete .ds-dropdown-menu .ds-input {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .algolia-autocomplete .algolia-docsearch-suggestion {
   padding: 0 !important;
   overflow: visible !important;
