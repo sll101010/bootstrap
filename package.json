@@ -65,11 +65,11 @@
     "markdown-it": "^8.4.2",
     "qunitjs": "^1.23.1",
     "replace-in-file": "^3.4.2",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.3",
     "shx": "^0.3.2",
     "stylelint": "~9.6.0",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-order": "^1.0.0",
+    "stylelint-order": "^2.0.0",
     "time-grunt": "^2.0.0"
   },
   "engines": {
